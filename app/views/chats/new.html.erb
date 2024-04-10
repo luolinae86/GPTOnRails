@@ -1,0 +1,19 @@
+<div class="content-container">
+  <p class="content-title"> Let's Talk </p>
+  <div class="input-button-container">
+    <%= form_with(model: Message.new, url: [@chat, @chat.messages.new]) do |form| %>
+      <ul role="list" class="overflow-y-auto max-h-[68vh] flex flex-col-reverse">
+        <%= turbo_stream_from "#{dom_id(@chat)}_messages" %>
+        <div id="<%= dom_id(@chat) %>_messages" >
+          <%= render @chat.messages %>
+        </div>
+      </ul>
+      <div class="user-input-form">
+        <%= form.text_field :content, class: "content-input-box" %>
+        <%= form.button class: "send-button" do %>
+          <i class="fas fa-paper-plane"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
