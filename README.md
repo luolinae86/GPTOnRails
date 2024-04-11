@@ -41,6 +41,4 @@ http://localhost:3000
 1. You need to have your own OpenAI API key at  https://platform.openai.com/account/api-keys
 2. In app/jobs/get_ai_response_job.rb, replace the access_token with your own OpenAI API key
 
-## Showcase
-
 
